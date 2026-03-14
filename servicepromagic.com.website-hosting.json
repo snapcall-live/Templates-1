@@ -5,8 +5,8 @@
     "serviceName": "ServiceProMagic Website Hosting",
     "version": 1,
     "logoUrl": "https://servicepromagic.com/logo-dm.png",
-    "description": "Connect your domain to your ServiceProMagic website. Automatically configures your CNAME and verification records so your site is live in minutes.",
-    "variableDescription": "verificationToken: Your ServiceProMagic domain verification token, found in your dashboard under Domain Settings.",
+    "description": "Connect your domain to your ServiceProMagic website. Configures your CNAME and domain verification records so your site is live in minutes.",
+    "variableDescription": "verificationToken: Your ServiceProMagic domain verification token, found in your dashboard under Domain Settings. Format: servicepromagic-verify-{id}-{hash}",
     "syncPubKeyDomain": "servicepromagic.com",
     "syncRedirectDomain": "publishapi-656593342616.us-central1.run.app",
     "records": [
@@ -20,8 +20,8 @@
         {
             "groupId": "verification",
             "type": "TXT",
-            "host": "@",
-            "data": "spm-verify=%verificationToken%",
+            "host": "_servicepromagic",
+            "data": "%verificationToken%",
             "ttl": 3600
         }
     ]
